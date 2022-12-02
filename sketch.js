@@ -39,7 +39,7 @@ class Cell {
 
     if (this.startCell) {
       noStroke();
-      fill('#aaf2bd');
+      fill('#aaf2bd33');
       rect(x, y, w, h);
     }
   }
@@ -217,7 +217,6 @@ class Maze {
 
     while (stack.length) {
       current = stack.pop();
-      console.log(stack.length);
 
       const next = this._getRandomNeigbour(current.getX(), current.getY());
       if (next) {
@@ -231,9 +230,9 @@ class Maze {
 
   render = () => {
     for (let i = 0; i < this.cells.length; i++) {
-      for (let j = 0; j < this.cells.length; j++) {
-        const w = width / this.width
-        const h = height / this.height
+      for (let j = 0; j < this.cells[0].length; j++) {
+        const w = width / this.width;
+        const h = height / this.height;
         this.cells[i][j].render(i * w, j * h, w, h);
       }
     }
